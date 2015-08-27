@@ -8,10 +8,23 @@
 
 import UIKit
 
-class ViewController: ListaCoreDataFunctions, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource {
+  
+  // MARK: - Variaveis
+  
+  /// Variavel da "conexão" com o CoreData
+  let coreDataDB = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+  
+  /// Array de itens do sistema
+  var itens      = [Itens]()
+  
+  // MARK: - Outlets
+  
   // Outlet da TableView
 	@IBOutlet weak var tableView: UITableView!
-		
+	
+  // MARK: - View Lifecycle
+  
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -20,9 +33,11 @@ class ViewController: ListaCoreDataFunctions, UITableViewDataSource {
 		tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
   
     // carrega os dados do CoreData
-		self.carregaDadosCoreData()
+    itens = Itens.buscarTodos(coreDataDB)
 	}
 	
+  // MARK: - Actions
+  
   // Ação de adicionar item na TableView
 	@IBAction func addButton(sender: UIBarButtonItem) {
 		var alerta          = UIAlertController(title: "Novo item", message: "Insira um nome para o item", preferredStyle: .Alert)
@@ -35,7 +50,7 @@ class ViewController: ListaCoreDataFunctions, UITableViewDataSource {
         self.alertaError("Erro ao salvar item", msg: "O nome do item não pode ficar em branco")
       }
       // Verifica se o item já existe
-      else if (self.itemExistente(nomeAdicionar)) {
+      else if (Itens.itemExistente(nomeAdicionar, inManagedObjectContext: self.coreDataDB)) {
         self.alertaError("Erro ao salvar item", msg: "Já existe um item com o nome: \(nomeAdicionar) \n Não é possível salvar dois nomes iguais")
       }
       // Salva no CoreData
@@ -60,10 +75,50 @@ class ViewController: ListaCoreDataFunctions, UITableViewDataSource {
 		
 		presentViewController(alerta, animated: true, completion: nil)
 	}
-	
-	// MARK: UITableViewDataSource
+  
+  // MARK: - Helpers
+  
+  /// Função para adicionar item no CoreData
+  ///
+  /// :param: tableView Referencia do Outlet da TableView
+  /// :param:  nome  Nome do item para adicionar no coreData
+  ///
+  /// AVISO: Esse exemplo eu passo a referencia da TableView do ViewController, só pra servir como exemplo mesmo
+  /// teoricamente seria melhor não fazer isso.
+  func adicionaItem(tableView: UITableView, nome: String) {
+    // chama uma função da classe "Itens" que já faz o processo de criar o novo objeto do CoreData
+    var novoItem = Itens(nome: nome, inManagedObjectContext: coreDataDB)
     
-	// Numero de linhas do tABLEvIEW
+    // adiciona no final do array de itens o novo item
+    itens.append(novoItem)
+    
+    // salva os dados
+    novoItem.salvar(coreDataDB)
+    
+    // recarrega os itens, se deixar descomentado essa linha aqui, ele vai adicionar o item na tableView na ordem alfabetica
+    itens = Itens.buscarTodos(coreDataDB)
+    
+    // recarrega a TableView
+    tableView.reloadData()
+  }
+  
+  /// Função para mostrar um alertView de error
+  ///
+  /// :param:  title  Título do alerta
+  /// :param:  msg    Mensagem do alerta
+  ///
+  func alertaError(title: String, msg: String) {
+    var alertaErro    = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+    let botaoCancelar = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+    
+    alertaErro.addAction(botaoCancelar)
+    
+    self.presentViewController(alertaErro, animated: true, completion: nil)
+  }
+	
+	// MARK: - UITableViewDataSource
+    
+	// Numero de linhas do TableView
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return itens.count
 	}
@@ -104,16 +159,18 @@ class ViewController: ListaCoreDataFunctions, UITableViewDataSource {
           true
         }
         // Verifica se o novo nome já existe
-        else if (self.itemExistente(novoNome)) {
+        else if (Itens.itemExistente(novoNome, inManagedObjectContext: self.coreDataDB)) {
           self.alertaError("Erro ao salvar item", msg: "Já existe um item com o nome: \(novoNome) \n Não é possível salvar dois nomes iguais")
         }
         // Salva no CoreData
         else {
           // Chama a função para atualizar o nome
-          self.atualizarItem(nomeAtual, novoNome: novoNome)
+          let item = Itens.buscar(nomeAtual, inManagedObjectContext: self.coreDataDB)
+          item?.nome = novoNome
+          item?.salvar(self.coreDataDB)
           
           // Racarrega os dados no CoreData
-          self.carregaDadosCoreData()
+          self.itens = Itens.buscarTodos(self.coreDataDB)
           
           // Recarrega a TableView
           self.tableView.reloadData()
@@ -143,15 +200,15 @@ class ViewController: ListaCoreDataFunctions, UITableViewDataSource {
       let itemApagar = self.itens[indexPath.row]
       
       // apaga o item do coreData
-      self.apagarItem(itemApagar)
+      itemApagar.apagar(self.coreDataDB)
+      
+      // Salva os itens
+      itemApagar.salvar(self.coreDataDB)
       
       // A TableView sempre carrega os elementos do array "itens" que são os dados do CoreData
       // Se você deleta um item do coreData e não recarrega o array, a quantidade de elementos do Array é diferente da quantidade das linhas
       // do tableView e dá erro
-      self.carregaDadosCoreData()
-      
-      // Salva os itens
-      self.salvaCoreData()
+      self.itens = Itens.buscarTodos(self.coreDataDB)
       
       // Remove o item da TableView
       self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
@@ -161,21 +218,6 @@ class ViewController: ListaCoreDataFunctions, UITableViewDataSource {
     botaoDeletar.backgroundColor = UIColor.redColor()
     
     return [botaoDeletar, botaoEditar]
-  }
-  
-  
-  /// Função para mostrar um alertView de error
-  ///
-  /// :param:  title  Título do alerta
-  /// :param:  msg    Mensagem do alerta
-  ///
-  func alertaError(title: String, msg: String) {
-    var alertaErro    = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
-    let botaoCancelar = UIAlertAction(title: "OK", style: .Destructive, handler: nil)
-    
-    alertaErro.addAction(botaoCancelar)
-    
-    self.presentViewController(alertaErro, animated: true, completion: nil)
   }
 
 // end
