@@ -58,7 +58,8 @@ class ListaCoreDataFunctions: UIViewController {
   /// :param: tableView Referencia do Outlet da TableView
   /// :param:  nome  Nome do item para adicionar no coreData
   ///
-  /// AVISO: Esse exemplo eu passo a referencia da TableView, só pra servir como exemplo, teoricamente seria melhor não fazer isso.
+  /// AVISO: Esse exemplo eu passo a referencia da TableView do ViewController, só pra servir como exemplo mesmo
+  /// teoricamente seria melhor não fazer isso.
   func adicionaItem(tableView: UITableView, nome: String) {
     // chama uma função da classe "Itens" que já faz o processo de criar o novo objeto do CoreData
     var novoItem = Itens.criaNovoObjeto(coreDataDB, nome: nome)
@@ -71,6 +72,9 @@ class ListaCoreDataFunctions: UIViewController {
     
     // recarrega os itens, se deixar descomentado essa linha aqui, ele vai adicionar o item na tableView na ordem alfabetica
     self.carregaDadosCoreData()
+    
+    // recarrega a TableView
+    tableView.reloadData()
   }
   
   /// Função para editar o nome do Item
