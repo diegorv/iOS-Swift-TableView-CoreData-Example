@@ -93,16 +93,33 @@ class ViewController: ListaCoreDataFunctions, UITableViewDataSource {
       
       var alerta      = UIAlertController(title: "Editando item", message: "Altere o nome do item", preferredStyle: .Alert)
       let botaoSalvar = UIAlertAction(title: "Salvar", style: .Default) { (action) in
-        let novoNome = alerta.textFields![0] as! UITextField
+        let novoNome     = (alerta.textFields![0] as! UITextField).text
         
-        // Chama a função para atualizar o nome
-        self.atualizarItem(nomeAtual, novoNome: novoNome.text)
+        // Verifica se o nome está em branco
+        if (novoNome.isEmpty) {
+          self.alertaError("Erro ao salvar item", msg: "O nome do item não pode ficar em branco")
+        }
+        // Se o nome atual for igual o nome anterior, não faz nada
+        else if (nomeAtual == novoNome) {
+          true
+        }
+        // Verifica se o novo nome já existe
+        else if (self.itemExistente(novoNome)) {
+          self.alertaError("Erro ao salvar item", msg: "Já existe um item com o nome: \(novoNome) \n Não é possível salvar dois nomes iguais")
+        }
+        // Salva no CoreData
+        else {
+          // Chama a função para atualizar o nome
+          self.atualizarItem(nomeAtual, novoNome: novoNome)
+          
+          // Racarrega os dados no CoreData
+          self.carregaDadosCoreData()
+          
+          // Recarrega a TableView
+          self.tableView.reloadData()
+        }
         
-        // Racarrega os dados no CoreData
-        self.carregaDadosCoreData()
-        
-        // Recarrega a TableView
-        self.tableView.reloadData()
+        self.tableView.setEditing(false, animated: false)
       }
       
       // Essa função é necessária para o textField aparecer no alerta
