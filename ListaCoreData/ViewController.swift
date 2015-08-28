@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   let coreDataDB = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
   
   /// Array de itens do sistema
-  var itens      = [Itens]()
+  var itens      = [Item]()
   
   // MARK: - Outlets
   
@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 		tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
   
     // carrega os dados do CoreData
-    itens = Itens.buscarTodos(coreDataDB)
+    itens = Item.buscarTodos(coreDataDB)
 	}
 	
   // MARK: - Actions
@@ -50,7 +50,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         self.alertaError("Erro ao salvar item", msg: "O nome do item não pode ficar em branco")
       }
       // Verifica se o item já existe
-      else if (Itens.itemExistente(nomeAdicionar, inManagedObjectContext: self.coreDataDB)) {
+      else if (Item.itemExistente(nomeAdicionar, inManagedObjectContext: self.coreDataDB)) {
         self.alertaError("Erro ao salvar item", msg: "Já existe um item com o nome: \(nomeAdicionar) \n Não é possível salvar dois nomes iguais")
       }
       // Salva no CoreData
@@ -87,7 +87,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   /// teoricamente seria melhor não fazer isso.
   func adicionaItem(tableView: UITableView, nome: String) {
     // chama uma função da classe "Itens" que já faz o processo de criar o novo objeto do CoreData
-    var novoItem = Itens(nome: nome, inManagedObjectContext: coreDataDB)
+    var novoItem = Item(nome: nome, inManagedObjectContext: coreDataDB)
     
     // adiciona no final do array de itens o novo item
     itens.append(novoItem)
@@ -96,7 +96,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     novoItem.salvar(coreDataDB)
     
     // recarrega os itens, se deixar descomentado essa linha aqui, ele vai adicionar o item na tableView na ordem alfabetica
-    itens = Itens.buscarTodos(coreDataDB)
+    itens = Item.buscarTodos(coreDataDB)
     
     // recarrega a TableView
     tableView.reloadData()
@@ -159,18 +159,18 @@ class ViewController: UIViewController, UITableViewDataSource {
           true
         }
         // Verifica se o novo nome já existe
-        else if (Itens.itemExistente(novoNome, inManagedObjectContext: self.coreDataDB)) {
+        else if (Item.itemExistente(novoNome, inManagedObjectContext: self.coreDataDB)) {
           self.alertaError("Erro ao salvar item", msg: "Já existe um item com o nome: \(novoNome) \n Não é possível salvar dois nomes iguais")
         }
         // Salva no CoreData
         else {
           // Chama a função para atualizar o nome
-          let item = Itens.buscar(nomeAtual, inManagedObjectContext: self.coreDataDB)
+          let item = Item.buscar(nomeAtual, inManagedObjectContext: self.coreDataDB)
           item?.nome = novoNome
           item?.salvar(self.coreDataDB)
           
           // Racarrega os dados no CoreData
-          self.itens = Itens.buscarTodos(self.coreDataDB)
+          self.itens = Item.buscarTodos(self.coreDataDB)
           
           // Recarrega a TableView
           self.tableView.reloadData()
@@ -208,7 +208,7 @@ class ViewController: UIViewController, UITableViewDataSource {
       // A TableView sempre carrega os elementos do array "itens" que são os dados do CoreData
       // Se você deleta um item do coreData e não recarrega o array, a quantidade de elementos do Array é diferente da quantidade das linhas
       // do tableView e dá erro
-      self.itens = Itens.buscarTodos(self.coreDataDB)
+      self.itens = Item.buscarTodos(self.coreDataDB)
       
       // Remove o item da TableView
       self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
