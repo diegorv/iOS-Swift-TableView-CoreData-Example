@@ -42,16 +42,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "96716C9C1B9DC475008C7F16"
-               BuildableName = "iOS-Swift-TableView-CoreData-ExampleTests.xctest"
-               BlueprintName = "iOS-Swift-TableView-CoreData-ExampleTests"
-               ReferencedContainer = "container:iOS-Swift-TableView-CoreData-Example.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
