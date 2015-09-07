@@ -1,9 +1,9 @@
 //
-//  AppDelegate.swift
+//  Item.swift
 //  iOS8-Swift-TableView-CoreData-Example
 //
 //  Created by Diego Rossini Vieira on 9/7/15.
-//  Copyright (c) 2015 Diego Rossini Vieira. All rights reserved.
+//  https://github.com/diegorv/iOS-Swift-TableView-CoreData-Example
 //
 
 import UIKit
