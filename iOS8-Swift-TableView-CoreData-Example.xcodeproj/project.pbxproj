@@ -17,6 +17,7 @@
 		96716CAE1B9DC4A7008C7F16 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 96716CAD1B9DC4A7008C7F16 /* .gitignore */; };
 		96716CB01B9DC600008C7F16 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 96716CAF1B9DC600008C7F16 /* README.md */; };
 		96716CB21B9DDAB6008C7F16 /* MIT-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 96716CB11B9DDAB6008C7F16 /* MIT-LICENSE.txt */; };
+		96716CB41B9DDC0D008C7F16 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96716CB31B9DDC0D008C7F16 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		96716CAD1B9DC4A7008C7F16 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		96716CAF1B9DC600008C7F16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96716CB11B9DDAB6008C7F16 /* MIT-LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MIT-LICENSE.txt"; sourceTree = "<group>"; };
+		96716CB31B9DDC0D008C7F16 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		96716C871B9DC474008C7F16 /* iOS8-Swift-TableView-CoreData-Example */ = {
 			isa = PBXGroup;
 			children = (
+				96716CB31B9DDC0D008C7F16 /* Item.swift */,
 				96716C8A1B9DC475008C7F16 /* AppDelegate.swift */,
 				96716C8F1B9DC475008C7F16 /* ViewController.swift */,
 				96716C911B9DC475008C7F16 /* Main.storyboard */,
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96716CB41B9DDC0D008C7F16 /* Item.swift in Sources */,
 				96716C901B9DC475008C7F16 /* ViewController.swift in Sources */,
 				96716C8E1B9DC475008C7F16 /* iOS8_Swift_TableView_CoreData_Example.xcdatamodeld in Sources */,
 				96716CB01B9DC600008C7F16 /* README.md in Sources */,
