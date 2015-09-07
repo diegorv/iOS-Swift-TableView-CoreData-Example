@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96067B371B9E54D10006E15C /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 96067B361B9E54D10006E15C /* .travis.yml */; };
 		96716C8B1B9DC475008C7F16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96716C8A1B9DC475008C7F16 /* AppDelegate.swift */; };
 		96716C8E1B9DC475008C7F16 /* iOS_Swift_TableView_CoreData_Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96716C8C1B9DC475008C7F16 /* iOS_Swift_TableView_CoreData_Example.xcdatamodeld */; };
 		96716C901B9DC475008C7F16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96716C8F1B9DC475008C7F16 /* ViewController.swift */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		96067B361B9E54D10006E15C /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = "iOS-Swift-TableView-CoreData-Example/.travis.yml"; sourceTree = "<group>"; };
 		96716C851B9DC474008C7F16 /* iOS-Swift-TableView-CoreData-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Swift-TableView-CoreData-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96716C891B9DC475008C7F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96716C8A1B9DC475008C7F16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +50,6 @@
 				96716CB11B9DDAB6008C7F16 /* MIT-LICENSE.txt */,
 				96716CAF1B9DC600008C7F16 /* README.md */,
 				96716CAD1B9DC4A7008C7F16 /* .gitignore */,
-				96067B361B9E54D10006E15C /* .travis.yml */,
 				96716C871B9DC474008C7F16 /* iOS-Swift-TableView-CoreData-Example */,
 				96716C861B9DC474008C7F16 /* Products */,
 			);
@@ -146,7 +143,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96067B371B9E54D10006E15C /* .travis.yml in Resources */,
 				96716CAE1B9DC4A7008C7F16 /* .gitignore in Resources */,
 				96716C931B9DC475008C7F16 /* Main.storyboard in Resources */,
 				96716CB21B9DDAB6008C7F16 /* MIT-LICENSE.txt in Resources */,
