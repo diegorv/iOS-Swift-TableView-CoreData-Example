@@ -14,6 +14,7 @@
 		96716C951B9DC475008C7F16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96716C941B9DC475008C7F16 /* Images.xcassets */; };
 		96716C981B9DC475008C7F16 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96716C961B9DC475008C7F16 /* LaunchScreen.xib */; };
 		96716CA41B9DC475008C7F16 /* iOS8_Swift_TableView_CoreData_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96716CA31B9DC475008C7F16 /* iOS8_Swift_TableView_CoreData_ExampleTests.swift */; };
+		96716CAE1B9DC4A7008C7F16 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 96716CAD1B9DC4A7008C7F16 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		96716C9D1B9DC475008C7F16 /* iOS8-Swift-TableView-CoreData-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS8-Swift-TableView-CoreData-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96716CA21B9DC475008C7F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96716CA31B9DC475008C7F16 /* iOS8_Swift_TableView_CoreData_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS8_Swift_TableView_CoreData_ExampleTests.swift; sourceTree = "<group>"; };
+		96716CAD1B9DC4A7008C7F16 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		96716C7C1B9DC474008C7F16 = {
 			isa = PBXGroup;
 			children = (
+				96716CAD1B9DC4A7008C7F16 /* .gitignore */,
 				96716C871B9DC474008C7F16 /* iOS8-Swift-TableView-CoreData-Example */,
 				96716CA01B9DC475008C7F16 /* iOS8-Swift-TableView-CoreData-ExampleTests */,
 				96716C861B9DC474008C7F16 /* Products */,
@@ -195,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96716CAE1B9DC4A7008C7F16 /* .gitignore in Resources */,
 				96716C931B9DC475008C7F16 /* Main.storyboard in Resources */,
 				96716C981B9DC475008C7F16 /* LaunchScreen.xib in Resources */,
 				96716C951B9DC475008C7F16 /* Images.xcassets in Resources */,
