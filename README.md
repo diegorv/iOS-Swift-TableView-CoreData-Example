@@ -1,5 +1,5 @@
 
-# TableView with CoreData Example 
+# iOS TableView with CoreData Example 
 > Created by [Diego Rossini Vieira](http://www.diegorv.com) on 07/SEP/15.
 
 - iOS version: **8**
