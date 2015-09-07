@@ -15,6 +15,8 @@
 		96716C981B9DC475008C7F16 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96716C961B9DC475008C7F16 /* LaunchScreen.xib */; };
 		96716CA41B9DC475008C7F16 /* iOS8_Swift_TableView_CoreData_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96716CA31B9DC475008C7F16 /* iOS8_Swift_TableView_CoreData_ExampleTests.swift */; };
 		96716CAE1B9DC4A7008C7F16 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 96716CAD1B9DC4A7008C7F16 /* .gitignore */; };
+		96716CB01B9DC600008C7F16 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 96716CAF1B9DC600008C7F16 /* README.md */; };
+		96716CB21B9DDAB6008C7F16 /* MIT-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 96716CB11B9DDAB6008C7F16 /* MIT-LICENSE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		96716CA21B9DC475008C7F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96716CA31B9DC475008C7F16 /* iOS8_Swift_TableView_CoreData_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS8_Swift_TableView_CoreData_ExampleTests.swift; sourceTree = "<group>"; };
 		96716CAD1B9DC4A7008C7F16 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		96716CAF1B9DC600008C7F16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		96716CB11B9DDAB6008C7F16 /* MIT-LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MIT-LICENSE.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 		96716C7C1B9DC474008C7F16 = {
 			isa = PBXGroup;
 			children = (
+				96716CB11B9DDAB6008C7F16 /* MIT-LICENSE.txt */,
+				96716CAF1B9DC600008C7F16 /* README.md */,
 				96716CAD1B9DC4A7008C7F16 /* .gitignore */,
 				96716C871B9DC474008C7F16 /* iOS8-Swift-TableView-CoreData-Example */,
 				96716CA01B9DC475008C7F16 /* iOS8-Swift-TableView-CoreData-ExampleTests */,
@@ -200,6 +206,7 @@
 			files = (
 				96716CAE1B9DC4A7008C7F16 /* .gitignore in Resources */,
 				96716C931B9DC475008C7F16 /* Main.storyboard in Resources */,
+				96716CB21B9DDAB6008C7F16 /* MIT-LICENSE.txt in Resources */,
 				96716C981B9DC475008C7F16 /* LaunchScreen.xib in Resources */,
 				96716C951B9DC475008C7F16 /* Images.xcassets in Resources */,
 			);
@@ -221,6 +228,7 @@
 			files = (
 				96716C901B9DC475008C7F16 /* ViewController.swift in Sources */,
 				96716C8E1B9DC475008C7F16 /* iOS8_Swift_TableView_CoreData_Example.xcdatamodeld in Sources */,
+				96716CB01B9DC600008C7F16 /* README.md in Sources */,
 				96716C8B1B9DC475008C7F16 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +427,7 @@
 				96716CA91B9DC475008C7F16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96716CAA1B9DC475008C7F16 /* Build configuration list for PBXNativeTarget "iOS8-Swift-TableView-CoreData-ExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +436,7 @@
 				96716CAC1B9DC475008C7F16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
