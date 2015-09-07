@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Item" representedClassName="PRODUCT_MODULE_NAME.Item" syncable="YES">
+    <entity name="Item" representedClassName="iOS8_Swift_TableView_CoreData_Example.Item" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
