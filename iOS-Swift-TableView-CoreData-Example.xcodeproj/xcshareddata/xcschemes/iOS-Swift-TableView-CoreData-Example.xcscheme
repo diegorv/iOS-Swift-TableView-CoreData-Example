@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "0640"
+   version = "1.3">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "96716C841B9DC474008C7F16"
+               BuildableName = "iOS-Swift-TableView-CoreData-Example.app"
+               BlueprintName = "iOS-Swift-TableView-CoreData-Example"
+               ReferencedContainer = "container:iOS-Swift-TableView-CoreData-Example.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "96716C9C1B9DC475008C7F16"
+               BuildableName = "iOS-Swift-TableView-CoreData-ExampleTests.xctest"
+               BlueprintName = "iOS-Swift-TableView-CoreData-ExampleTests"
+               ReferencedContainer = "container:iOS-Swift-TableView-CoreData-Example.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      buildConfiguration = "Debug">
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "96716C9C1B9DC475008C7F16"
+               BuildableName = "iOS-Swift-TableView-CoreData-ExampleTests.xctest"
+               BlueprintName = "iOS-Swift-TableView-CoreData-ExampleTests"
+               ReferencedContainer = "container:iOS-Swift-TableView-CoreData-Example.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "96716C841B9DC474008C7F16"
+            BuildableName = "iOS-Swift-TableView-CoreData-Example.app"
+            BlueprintName = "iOS-Swift-TableView-CoreData-Example"
+            ReferencedContainer = "container:iOS-Swift-TableView-CoreData-Example.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </TestAction>
+   <LaunchAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "96716C841B9DC474008C7F16"
+            BuildableName = "iOS-Swift-TableView-CoreData-Example.app"
+            BlueprintName = "iOS-Swift-TableView-CoreData-Example"
+            ReferencedContainer = "container:iOS-Swift-TableView-CoreData-Example.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Release"
+      debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "96716C841B9DC474008C7F16"
+            BuildableName = "iOS-Swift-TableView-CoreData-Example.app"
+            BlueprintName = "iOS-Swift-TableView-CoreData-Example"
+            ReferencedContainer = "container:iOS-Swift-TableView-CoreData-Example.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>
