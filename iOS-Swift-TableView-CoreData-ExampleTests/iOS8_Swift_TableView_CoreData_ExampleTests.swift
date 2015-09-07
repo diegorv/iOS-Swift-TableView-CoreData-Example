@@ -1,6 +1,6 @@
 //
-//  iOS8_Swift_TableView_CoreData_ExampleTests.swift
-//  iOS8-Swift-TableView-CoreData-ExampleTests
+//  iOS_Swift_TableView_CoreData_ExampleTests.swift
+//  iOS-Swift-TableView-CoreData-ExampleTests
 //
 //  Created by Diego Rossini Vieira on 9/7/15.
 //  Copyright (c) 2015 Diego Rossini Vieira. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class iOS8_Swift_TableView_CoreData_ExampleTests: XCTestCase {
+class iOS_Swift_TableView_CoreData_ExampleTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

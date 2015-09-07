@@ -1,6 +1,6 @@
 //
 //  Item.swift
-//  iOS8-Swift-TableView-CoreData-Example
+//  iOS-Swift-TableView-CoreData-Example
 //
 //  Created by Diego Rossini Vieira on 9/7/15.
 //  https://github.com/diegorv/iOS-Swift-TableView-CoreData-Example
@@ -47,14 +47,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // MARK: - Core Data stack
 
   lazy var applicationDocumentsDirectory: NSURL = {
-      // The directory the application uses to store the Core Data store file. This code uses a directory named "com.diegorv.iOS8_Swift_TableView_CoreData_Example" in the application's documents Application Support directory.
+      // The directory the application uses to store the Core Data store file. This code uses a directory named "com.diegorv.iOS_Swift_TableView_CoreData_Example" in the application's documents Application Support directory.
       let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
       return urls[urls.count-1] as! NSURL
   }()
 
   lazy var managedObjectModel: NSManagedObjectModel = {
       // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-      let modelURL = NSBundle.mainBundle().URLForResource("iOS8_Swift_TableView_CoreData_Example", withExtension: "momd")!
+      let modelURL = NSBundle.mainBundle().URLForResource("iOS_Swift_TableView_CoreData_Example", withExtension: "momd")!
       return NSManagedObjectModel(contentsOfURL: modelURL)!
   }()
 
@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
       // Create the coordinator and store
       var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-      let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("iOS8_Swift_TableView_CoreData_Example.sqlite")
+      let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("iOS_Swift_TableView_CoreData_Example.sqlite")
       var error: NSError? = nil
       var failureReason = "There was an error creating or loading the application's saved data."
       if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {

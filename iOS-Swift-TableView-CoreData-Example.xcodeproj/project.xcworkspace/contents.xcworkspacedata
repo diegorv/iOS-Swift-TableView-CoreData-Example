@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:iOS8-Swift-TableView-CoreData-Example.xcodeproj">
+      location = "self:iOS-Swift-TableView-CoreData-Example.xcodeproj">
    </FileRef>
 </Workspace>
