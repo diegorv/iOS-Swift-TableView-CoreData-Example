@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fSl-bX-XoB">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,9 +16,34 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="D7y-b1-5gz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5Ms-QW-x0M"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1m8-OG-bCv"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D7y-b1-5gz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Ehi-gB-soR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="D7y-b1-5gz" secondAttribute="bottom" id="YYV-AX-wVh"/>
+                            <constraint firstItem="D7y-b1-5gz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="ceU-bP-cqU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="D7y-b1-5gz" secondAttribute="trailing" constant="-16" id="drD-w3-y7X"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dl7-Ry-A6M"/>
+                    <navigationItem key="navigationItem" id="dl7-Ry-A6M">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oyA-YZ-4hZ">
+                            <connections>
+                                <action selector="addButton:" destination="BYZ-38-t0r" id="qbo-QP-eE5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="D7y-b1-5gz" id="wDY-nm-7r6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
