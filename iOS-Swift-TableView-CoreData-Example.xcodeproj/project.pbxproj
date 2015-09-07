@@ -27,8 +27,6 @@
 		96716C921B9DC475008C7F16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96716C941B9DC475008C7F16 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96716C971B9DC475008C7F16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		96716CA21B9DC475008C7F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96716CA31B9DC475008C7F16 /* iOS8_Swift_TableView_CoreData_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS8_Swift_TableView_CoreData_ExampleTests.swift; sourceTree = "<group>"; };
 		96716CAD1B9DC4A7008C7F16 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		96716CAF1B9DC600008C7F16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96716CB11B9DDAB6008C7F16 /* MIT-LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MIT-LICENSE.txt"; sourceTree = "<group>"; };
@@ -53,7 +51,6 @@
 				96716CAF1B9DC600008C7F16 /* README.md */,
 				96716CAD1B9DC4A7008C7F16 /* .gitignore */,
 				96716C871B9DC474008C7F16 /* iOS-Swift-TableView-CoreData-Example */,
-				96716CA01B9DC475008C7F16 /* iOS-Swift-TableView-CoreData-ExampleTests */,
 				96716C861B9DC474008C7F16 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,23 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				96716C891B9DC475008C7F16 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		96716CA01B9DC475008C7F16 /* iOS-Swift-TableView-CoreData-ExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				96716CA31B9DC475008C7F16 /* iOS8_Swift_TableView_CoreData_ExampleTests.swift */,
-				96716CA11B9DC475008C7F16 /* Supporting Files */,
-			);
-			path = "iOS-Swift-TableView-CoreData-ExampleTests";
-			sourceTree = "<group>";
-		};
-		96716CA11B9DC475008C7F16 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				96716CA21B9DC475008C7F16 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
