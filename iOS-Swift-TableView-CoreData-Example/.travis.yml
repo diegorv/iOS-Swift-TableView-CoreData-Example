@@ -1,0 +1,6 @@
+osx_image: xcode6.4
+language: objective-c
+
+xcode_workspace: iOS-Swift-TableView-CoreData-Example.xcodeproj
+xcode_scheme: iOS-Swift-TableView-CoreData-Example
+xcode_sdk: iphonesimulator8.4
