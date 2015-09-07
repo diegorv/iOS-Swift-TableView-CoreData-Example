@@ -7,7 +7,7 @@
 - Xcode: **6.4**
 
 ## Features
-- TableView with Actions (Add item and on swipe: Edit, Delete item)
+- TableView with Actions (Add item and on cell swipe: edit, delete buttons)
 - Simple Validation (No empty item and no duplicate item)
 - CoreData
 
