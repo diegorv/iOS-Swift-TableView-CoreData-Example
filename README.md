@@ -28,6 +28,7 @@ Simple example about TableView and CoreData working together.
 - Just fork it and open a pull request :-)
 
 ## Contributors
+- [Diego Rossini Vieira](http://www.github.com/diegorv)
 - [Marcos Trovilho](http://www.github.com/mtrovilho)
 
 ## License
