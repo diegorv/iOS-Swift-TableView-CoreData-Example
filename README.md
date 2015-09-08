@@ -20,6 +20,10 @@ Simple example about TableView and CoreData working together.
 - Simple Validation (No empty item and no duplicate item).
 - CoreData (Persistent data).
 
+## Example
+
+![iOS Simulator](https://raw.githubusercontent.com/diegorv/iOS-Swift-TableView-CoreData-Example/master/example.gif)
+
 ## Contributing
 - Just fork it and open a pull request :-)
 
