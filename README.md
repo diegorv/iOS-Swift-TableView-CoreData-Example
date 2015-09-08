@@ -1,7 +1,13 @@
 
 # iOS TableView with CoreData Example 
+[![Build Status](https://travis-ci.org/diegorv/iOS-Swift-TableView-CoreData-Example.svg)](https://travis-ci.org/diegorv/iOS-Swift-TableView-CoreData-Example)
+[![Platform](https://img.shields.io/badge/platform-iOS%208%20%7C%20TableView%20%7C%20CoreData-lightgrey.svg)](https://travis-ci.org/diegorv/iOS-Swift-TableView-CoreData-Example)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/diegorv/iOS-Swift-TableView-CoreData-Example)
+[![Forks](https://img.shields.io/github/forks/diegorv/iOS-Swift-TableView-CoreData-Example.svg)](https://github.com/diegorv/iOS-Swift-TableView-CoreData-Example)
+[![Stars](https://img.shields.io/github/stars/diegorv/iOS-Swift-TableView-CoreData-Example.svg)](https://github.com/diegorv/iOS-Swift-TableView-CoreData-Example)
 > Created by [Diego Rossini Vieira](http://www.diegorv.com) on 07/SEP/15.
 
+## What?
 - iOS version: **8**
 - Language: **Swift**
 - Xcode: **6.4**
@@ -17,4 +23,5 @@
 ## Contributors
 - [Marcos Trovilho](http://www.github.com/mtrovilho)
 
-# MIT LICENSE
+## License
+This code is available under the MIT license. See the LICENSE file for more info.
