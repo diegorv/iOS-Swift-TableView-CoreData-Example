@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   // MARK: - Variables
 
   /// CoreData connection variable
-  let coreDataDB = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+  let coreDataDB = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 
   /// TableView array data
   var items      = [Item]()
@@ -40,22 +40,22 @@ class ViewController: UIViewController, UITableViewDataSource {
 
   /// TableView add button
   @IBAction func addButton(sender: UIBarButtonItem) {
-    var addFormAlert    = UIAlertController(title: "New item", message: "Enter a name for the item", preferredStyle: .Alert)
-    let saveButton      = UIAlertAction    (title: "Save", style: .Default) { (action: UIAlertAction!) -> Void in
-      let nameTextField = (addFormAlert.textFields![0] as! UITextField).text
+    let addFormAlert    = UIAlertController(title: "New item", message: "Enter a name for the item", preferredStyle: .Alert)
+    let saveButton      = UIAlertAction    (title: "Save", style: .Default) { (action: UIAlertAction) -> Void in
+      let nameTextField = (addFormAlert.textFields![0] ).text
 
       // Check if name is empty
-      if (nameTextField.isEmpty) {
+      if (nameTextField!.isEmpty) {
         self.alertError("Unable to save", msg: "Item name can't be blank.")
       }
       // Check duplicate item name
-      else if (Item.checkDuplicate(nameTextField, inManagedObjectContext: self.coreDataDB)) {
+      else if (Item.checkDuplicate(nameTextField!, inManagedObjectContext: self.coreDataDB)) {
         self.alertError("Unable to save", msg: "There is already an item with name: \(nameTextField).")
       }
       // Save data
       else {
         // Use class "Item" to create a new CoreData object
-        var newItem = Item(name: nameTextField, inManagedObjectContext: self.coreDataDB)
+        let newItem = Item(name: nameTextField!, inManagedObjectContext: self.coreDataDB)
 
         // Add item to array
         self.items.append(newItem)
@@ -94,7 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
   // Show data in TableView row
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
 
     cell.textLabel?.text = self.items[indexPath.row].name
     return cell
@@ -111,15 +111,15 @@ class ViewController: UIViewController, UITableViewDataSource {
 
   // Actions on cell swipe in TableView
   func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-    var editSwipeButton = UITableViewRowAction(style: .Default, title: "Edit") { (action, indexPath) in
+    let editSwipeButton = UITableViewRowAction(style: .Default, title: "Edit") { (action, indexPath) in
       let currentName = self.items[indexPath.row].name
 
-      var alertEdit   = UIAlertController(title: "Editing item", message: "Change item name", preferredStyle: .Alert)
+      let alertEdit   = UIAlertController(title: "Editing item", message: "Change item name", preferredStyle: .Alert)
       let saveButton  = UIAlertAction(title: "Save", style: .Default) { (action) in
-        let newItemName = (alertEdit.textFields![0] as! UITextField).text
+        let newItemName = (alertEdit.textFields![0] ).text
 
         // Check if name is empty
-        if (newItemName.isEmpty) {
+        if (newItemName!.isEmpty) {
           self.alertError("Unable to save", msg: "Item name can't be blank.")
         }
         // Current Name equal New Name
@@ -127,14 +127,14 @@ class ViewController: UIViewController, UITableViewDataSource {
           true // do nothing
         }
         // Check duplicate item name
-        else if (Item.checkDuplicate(newItemName, inManagedObjectContext: self.coreDataDB)) {
+        else if (Item.checkDuplicate(newItemName!, inManagedObjectContext: self.coreDataDB)) {
           self.alertError("Unable to save", msg: "There is already an item with name: \(newItemName).")
         }
         // Save CoreData
         else {
           // Update item name
           let item = Item.search(currentName, inManagedObjectContext: self.coreDataDB)
-          item?.name = newItemName
+          item?.name = newItemName!
           item?.save(self.coreDataDB)
 
           // Reload Coredata data
@@ -161,7 +161,7 @@ class ViewController: UIViewController, UITableViewDataSource {
       self.presentViewController(alertEdit, animated: true, completion: nil)
     }
 
-    var deleteSwipteButton = UITableViewRowAction(style: .Normal, title: "Delete") { (action, indexPath) in
+    let deleteSwipteButton = UITableViewRowAction(style: .Normal, title: "Delete") { (action, indexPath) in
       // Find item
       let itemDelete = self.items[indexPath.row]
 
@@ -189,11 +189,11 @@ class ViewController: UIViewController, UITableViewDataSource {
 
   /// Show a alert error
   ///
-  /// :param:  title  Title
-  /// :param:  msg    Message
+  /// - parameter  title:  Title
+  /// - parameter  msg:    Message
   ///
   func alertError(title: String, msg: String) {
-    var alert    = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+    let alert    = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
     let okButton = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
 
     alert.addAction(okButton)

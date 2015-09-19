@@ -23,7 +23,7 @@ class Item: NSManagedObject {
 
   /// Function to get all CoreData values
   ///
-  /// :param: managedObjectContext CoreData Connection
+  /// - parameter managedObjectContext: CoreData Connection
   ///
   class func fetchAll(managedObjectContext: NSManagedObjectContext) -> [Item] {
     let listagemCoreData             = NSFetchRequest(entityName: "Item")
@@ -33,26 +33,26 @@ class Item: NSManagedObject {
     listagemCoreData.sortDescriptors = [orderByName]
 
     // Get items from CoreData
-    return managedObjectContext.executeFetchRequest(listagemCoreData, error: nil) as? [Item] ?? []
+    return (try? managedObjectContext.executeFetchRequest(listagemCoreData)) as? [Item] ?? []
   }
 
   /// Function to search item by name
   ///
-  /// :param: name Item name
-  /// :param: managedObjectContext CoreData Connection
+  /// - parameter name: Item name
+  /// - parameter managedObjectContext: CoreData Connection
   ///
   class func search(name: String, inManagedObjectContext managedObjectContext: NSManagedObjectContext) -> Item? {
     let fetchRequest       = NSFetchRequest(entityName: "Item")
     fetchRequest.predicate = NSPredicate(format: "name = %@", name)
 
-    let result             = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as? [Item]
+    let result             = (try? managedObjectContext.executeFetchRequest(fetchRequest)) as? [Item]
     return result?.first
   }
 
   /// Function to check duplicate item
   ///
-  /// :param: name Item name
-  /// :param: managedObjectContext CoreData Connection
+  /// - parameter name: Item name
+  /// - parameter managedObjectContext: CoreData Connection
   ///
   class func checkDuplicate(name: String, inManagedObjectContext managedObjectContext: NSManagedObjectContext) -> Bool {
     return search(name, inManagedObjectContext: managedObjectContext) != nil
@@ -60,7 +60,7 @@ class Item: NSManagedObject {
 
   /// Function to delete a item
   ///
-  /// :param: managedObjectContext CoreData Connection
+  /// - parameter managedObjectContext: CoreData Connection
   ///
   func destroy(managedObjectContext: NSManagedObjectContext) {
     managedObjectContext.deleteObject(self)
@@ -68,15 +68,15 @@ class Item: NSManagedObject {
 
   /// Function to save CoreData values
   ///
-  /// :param: managedObjectContext CoreData Connection
+  /// - parameter managedObjectContext: CoreData Connection
   ///
   func save(managedObjectContext: NSManagedObjectContext) {
-    var error: NSErrorPointer = nil
-
-    if(managedObjectContext.save(error)) {
-      if (error != nil) {
-        println("Error on save: \(error.debugDescription)")
-      }
+    do {
+      try managedObjectContext.save()
+    }
+    catch {
+      let nserror = error as NSError
+      print("Error on save: \(nserror.debugDescription)")
     }
   }
 }

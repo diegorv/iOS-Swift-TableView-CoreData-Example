@@ -11,9 +11,9 @@
 
 Simple example about TableView and CoreData working together.
 
-- iOS version: **8**
+- iOS version: **9**
 - Language: **Swift**
-- Xcode: **6.4**
+- Xcode: **7.0**
 
 ## Features
 - TableView with Actions (Add item and on cell swipe: edit, delete buttons).
